@@ -26,10 +26,11 @@ create table memos(id integer, subid integer, memo text, primary key(id, subid))
 
 ## 動作確認
 ```
-http://127.0.0.1:8000/memos にアクセス 新規データ作成
+php artisan serve
 
-ID が同一
-Sub IDが異なるデータを作成
+http://127.0.0.1:8000/memos にアクセスし新規データ作成
+
+ID が同一かつSub IDが異なるデータを作成
 
 一覧でメモをクリックすると編集画面
 
