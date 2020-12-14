@@ -12,6 +12,10 @@ DB_CONNECTION=sqlite に変更
 
 php artisan key:generate
 touch database/database.sqlite
+
+npm install
+npm run dev
+
 php artisan serve --host=0.0.0.0
 ```
 
