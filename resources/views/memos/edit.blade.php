@@ -2,45 +2,38 @@
 
 @section('content')
 
-	<h1 class="title">Memoを編集</h1>
+    <div class="flex items-center h-screen w-full bg-teal-lighter">
+        <div class="w-full bg-white rounded shadow-lg p-8 m-4">
+            <h1 class="title mt-2">Memoを編集</h1>
 
-	<form method="POST" action="/update/">
-		@method('PATCH')
-		@csrf
+            <form method="POST" action="/update/">
+                @method('PATCH')
+                @csrf
 
 
-		<div class="field">
-			<label class="label">ID</label>
+                <div class="flex flex-col mb-4">
+                    <label class="font-bold text-lg text-grey-darkest">ID</label>
+                    <input readonly type="text" class="border-b-2 border-dashed py-2 px-3 text-grey-darkest" name="id" value="{{ $memo->id }}" required>
+                </div>
 
-			<div class="control">
-                <input readonly type="text" class="form-control" name="id" value="{{ $memo->id }}" required>
-			</div>
-		</div>
+                <div class="flex flex-col mb-4">
+                    <label class="font-bold text-lg text-grey-darkest">Sub ID</label>
+                    <input readonly type="text" class="border-b-2 border-dashed py-2 px-3 text-grey-darkest" name="subid" value="{{ $memo->subid }}" required>
+                </div>
 
-        <div class="field">
-			<label class="label">Sub ID</label>
+                <div class="flex flex-col mb-4">
+                    <label class="font-bold text-lg text-grey-darkest">メモ</label>
+                    <textarea name="memo" class="border py-2 px-3 text-grey-darkest rounded-lg" required>{{ $memo->memo }}</textarea>
+                </div>
 
-			<div class="control">
-                <input readonly type="text" class="form-control" name="subid" value="{{ $memo->subid }}" required>
-			</div>
-		</div>
+                <div class="flex flex-col mb-4">
+                    <button type="submit" class="btn btn-primary mt-2">更新</button>
+                </div>
 
-		<div class="field">
-			<label class="label">メモ</label>
-
-			<div class="control">
-                <textarea name="memo" class="form-control" required>{{ $memo->memo }}</textarea>
-			</div>
-		</div>
-
-		<div class="field">
-			<div class="control">
-				<button type="submit" class="btn btn-primary mt-2">更新</button>
-			</div>
-		</div>
-
-	</form>
-	<br>
+            </form>
+            <br>
+        </div>
+    </div>
 
 
 @endsection

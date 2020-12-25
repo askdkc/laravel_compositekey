@@ -17,17 +17,17 @@
             <table class="min-w-full divide-y divide-gray-200">
               <thead class="bg-gray-50">
                 <tr>
-                  <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th scope="col" class="px-6 py-3 text-left font-bold text-lg  font-medium text-gray-500 uppercase tracking-wider">
                     ID
                   </th>
-                  <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th scope="col" class="px-6 py-3 text-left font-bold text-lg  font-medium text-gray-500 uppercase tracking-wider">
                     独自ID
                   </th>
-                  <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th scope="col" class="px-6 py-3 text-left font-bold text-lg  font-medium text-gray-500 uppercase tracking-wider">
                     メモ
                   </th>
-                  <th scope="col" class="relative px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Edit
+                  <th scope="col" class="relative px-6 py-3 text-right font-bold text-lg  font-medium text-gray-500 uppercase tracking-wider">
+                    編集
                   </th>
                 </tr>
               </thead>
@@ -48,7 +48,7 @@
                    <div class="text-sm text-gray-900">{{$memo->memo}}</div>
                   </td>
                   <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                    <a href="/memos/{{ $memo->id }}/{{ $memo->subid }}/edit/">Edit</a>
+                    <a href="/memos/{{ $memo->id }}/{{ $memo->subid }}/edit/">編集</a>
                   </td>
                 </tr>
                 @endforeach
