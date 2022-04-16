@@ -4,6 +4,15 @@
     <div class="flex items-center h-screen w-full bg-teal-lighter">
         <div class="w-full bg-white rounded shadow-lg p-8 m-4">
             <h1 class="title mt-2">メモ作成画面</h1>
+            @error('id')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+            @error('subid')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+            @error('memo')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
 
             <form method="POST" action="/memos">
                 @csrf
