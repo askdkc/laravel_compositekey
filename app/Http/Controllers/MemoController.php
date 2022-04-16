@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Memo;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class MemoController extends Controller
 {
@@ -37,9 +38,11 @@ class MemoController extends Controller
      */
     public function store()
     {
+        $id = request()->id;
+        $subid = request()->subid;
         $validated = request()->validate([
-    		'id' => ['required'],
-    		'subid' => ['required'],
+    		'id' => ['required','unique:memos,id,NULL,id,subid,' . $subid],
+    		'subid' => ['required','unique:memos,subid,NULL,id,id,' . $id],
     		'memo' => ['required','min:3']
     	]);
 
@@ -99,7 +102,5 @@ class MemoController extends Controller
     public function destroy(Memo $memo)
     {
         // 未実装
-        
-
     }
 }
