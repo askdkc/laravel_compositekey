@@ -9,10 +9,12 @@ class Memo extends Model
 {
     use HasFactory;
 
-    //これで複合キーが使える
-    use \App\Traits\HasCompositeKey;
+    // HasCompositeKeyトレイトを使って複合キーを使う場合には以下のコメントアウトを外す
+    // use \App\Traits\HasCompositeKey;
+    // protected $primaryKey = ['id','subid'];
 
-    protected $primaryKey = ['id', 'subid'];
+    // HasCompositeKeyトレイトを使う場合には、下記のprimaryKey部分はコメントアウトする
+    protected $primaryKey = 'compositeid';
     public $incrementing = false;
 
     protected $fillable = ['id','subid', 'memo'];
