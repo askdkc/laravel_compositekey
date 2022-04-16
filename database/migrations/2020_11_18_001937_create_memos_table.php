@@ -14,12 +14,14 @@ class CreateMemosTable extends Migration
     public function up()
     {
         Schema::create('memos', function (Blueprint $table) {
-            $table->integer('id');
-            $table->integer('subid')->nullable();
+            $table->string('id');
+            $table->string('subid');
             $table->text('memo');
+            //idとsubidの組み合わせはユニークにする 
+            $table->unique(['id', 'subid']);
+            //idとsubidからcompositeidを自動生成
+            $table->string('compositeid')->storedAs("id || '_' ||subid");
             $table->timestamps();
-
-
         });
     }
 
